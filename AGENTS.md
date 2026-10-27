@@ -32,7 +32,7 @@ Normal git here uses 1Password SSH keys; every use needs a fingerprint touch. So
 - **HTTPS via `gh`** is the default (`gh` is the credential helper for github.com). `gh repo clone` and HTTPS `git clone` just work, private repos included.
 - **Remote `gh`** (HTTPS) is for fetch/push. `origin` is SSH, for me only. If a repo lacks `gh`: `git remote add gh https://github.com/<owner>/<repo>.git`.
 - **Cloning:** clone over HTTPS, rename that remote to `gh`, add SSH `origin` for the same repo.
-- **Commits:** `AGENT_MODEL="<provider>/<model>" git agent-commit -m "type(scope): subject"`. Same args as `git commit`; signs with the agent key, adds an `Assisted-by:` trailer. If you're a different agent or the alias is missing, say so; don't fall back to plain `git commit` or mislabel the trailer.
+- **Commits:** `AGENT_MODEL="<provider>/<model>" git agent-commit -m "type(scope): subject"`. Same args as `git commit`; signs with the agent key, adds a `Co-authored-by: OpenCode <version> (<model>) <noreply@anthropic.com>` trailer. If you're a different agent or the alias is missing, say so; don't fall back to plain `git commit` or mislabel the trailer.
 - **Branches/PRs:** work on a branch, push to `gh`, `gh pr create`. I merge. Conventional Commits (`feat:`, `fix:`, `docs:`, `ci:`, `chore:`; `!` or `BREAKING CHANGE:` footer), since releases are generated from them.
 - **Tokens:** pushes touching `.github/workflows/` need the `workflow` scope. Don't add scopes without asking.
 
