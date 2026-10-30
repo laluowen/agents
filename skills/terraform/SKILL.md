@@ -13,3 +13,9 @@ Default: raw provider resources. Public modules are often over-broad, lag the pr
 - My own or internal modules: fine to use and extend.
 - Module already in the repo: follow its pattern. Don't swap it for raw resources or another module without asking.
 - Removing a module changes resource addresses: use `moved` blocks and say so.
+
+## Applying
+
+- Never run `apply` (including `-auto-approve`, `-target`, and `apply` on a saved plan) or `destroy`. I run applies myself. Give me the exact command and what to expect.
+- Same for state-changing commands: `state rm`, `state mv`, `untaint`, `taint`, `import`, `force-unlock`. Ask first.
+- Read-only commands are fine: `fmt`, `validate`, `plan` (without `-out` applied), `show`, `state list`/`show`, `output`, `providers`.
