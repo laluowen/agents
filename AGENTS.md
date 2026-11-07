@@ -40,13 +40,8 @@ Normal git here uses 1Password SSH keys; every use needs a fingerprint touch. So
 - **Branches/PRs:** work on a branch, push to `gh`, `gh pr create`. I merge. Conventional Commits (`feat:`, `fix:`, `docs:`, `ci:`, `chore:`; `!` or `BREAKING CHANGE:` footer), since releases are generated from them.
 - **Tokens:** pushes touching `.github/workflows/` need the `workflow` scope. Don't add scopes without asking.
 
-### laluowen (personal)
-
-- Usually just you. Direct push to `main` is fine. Branches and PRs are optional.
-- Still use `gh` for pushes, `git agent-commit` for commits, and the `gh` remote rules above.
-
 ### lalu-uk org
 
-- PR into `main` required; no direct push. This does not apply to `laluowen`.
+- PR into `main` required; no direct push.
 - Releases are immutable: published assets and tag frozen, tags never reused. Bad release = new version. Pipelines: draft, attach all assets, publish.
 - Actions pinned by commit SHA with a version comment (Renovate maintains them).
